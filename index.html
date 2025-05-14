@@ -2,42 +2,52 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dayvay – Магазин сайтів</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dayvay — Інтернет-магазин сайтів</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .buy-button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background-color: #218838;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Dayvay</h1>
-    <p>Продаж готових сайтів для бізнесу та ідей</p>
-    <nav>
-      <a href="index.html">Головна</a>
-      <a href="about.html">Про нас</a>
-      <a href="reviews.html">Відгуки</a>
-      <a href="cart.html">Корзина</a>
-    </nav>
-  </header>
+  <h1>Ласкаво просимо в Dayvay</h1>
+  <p>Ми продаємо готові сайти для бізнесу, портфоліо, магазинів і багато іншого!</p>
+  <button class="buy-button" onclick="buyNow()">Купити</button>
 
-  <section class="products">
-    <div class="product">
-      <h2>Сайт для кафе</h2>
-      <p>Готовий сучасний сайт для кафе або ресторану.</p>
-      <a href="#" class="buy-btn">Купити</a>
-    </div>
-    <div class="product">
-      <h2>Сайт-портфоліо</h2>
-      <p>Ідеальний варіант для дизайнера або розробника.</p>
-      <a href="#" class="buy-btn">Купити</a>
-    </div>
-    <div class="product">
-      <h2>Інтернет-магазин</h2>
-      <p>Шаблон магазину з корзиною та каталогом.</p>
-      <a href="#" class="buy-btn">Купити</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>Контакти: dayvay56@gmail.com | © 2025 Dayvay</p>
-  </footer>
+  <script>
+    function buyNow() {
+      alert("Дякуємо за покупку! Ми зв'яжемося з вами на dayvay56@gmail.com");
+    }
+  </script>
 </body>
 </html>
