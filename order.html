@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Замовлення сайту — Dayvay</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      background-color: white;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, select, textarea {
+      display: block;
+      width: 300px;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    a {
+      display: block;
+      margin-top: 20px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Замовлення сайту</h1>
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="Ваше ім’я" required>
+    <input type="email" placeholder="Email для звʼязку" required>
+    <select required>
+      <option value="">Оберіть тип сайту</option>
+      <option value="ecommerce">Інтернет-магазин</option>
+      <option value="simple">Простий магазин</option>
+      <option value="fastfood">Фастфуд-сайт</option>
+    </select>
+    <textarea placeholder="Ваші побажання..." rows="5"></textarea>
+    <button type="submit">Надіслати</button>
+  </form>
+  <a href="index.html">Повернутись на головну</a>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Дякуємо за замовлення! Ми з вами звʼяжемося якнайшвидше.");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
