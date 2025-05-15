@@ -12,18 +12,13 @@
       background-color: #f7f7f7;
       color: #333;
     }
-
     header {
       background-color: #24292e;
       padding: 20px;
       color: white;
       text-align: center;
     }
-
-    h1 {
-      margin: 0;
-    }
-
+    h1 { margin: 0; }
     nav {
       display: flex;
       justify-content: center;
@@ -31,7 +26,6 @@
       background-color: #eaeaea;
       padding: 10px;
     }
-
     nav button {
       background-color: #007bff;
       color: white;
@@ -42,20 +36,12 @@
       font-size: 16px;
       transition: 0.3s;
     }
-
-    nav button:hover {
-      background-color: #0056b3;
-    }
-
+    nav button:hover { background-color: #0056b3; }
     section {
       padding: 30px;
       display: none;
     }
-
-    section.active {
-      display: block;
-    }
-
+    section.active { display: block; }
     .buy-button {
       margin-top: 20px;
       padding: 12px 24px;
@@ -67,11 +53,7 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
-    .buy-button:hover {
-      background-color: #218838;
-    }
-
+    .buy-button:hover { background-color: #218838; }
     footer {
       background-color: #24292e;
       color: white;
@@ -79,7 +61,6 @@
       padding: 20px;
       margin-top: 40px;
     }
-
     .example {
       background-color: #fff;
       border: 1px solid #ddd;
@@ -94,61 +75,42 @@
     <h1>Dayvay — Cайти під замовлення</h1>
     <p>Виберіть тип сайту та замовляйте вже сьогодні!</p>
   </header>
-
   <nav>
     <button onclick="showSection('ecommerce')">Інтернет-магазин</button>
     <button onclick="showSection('simple')">Простий магазин</button>
     <button onclick="showSection('fastfood')">Фастфуд-сайт</button>
   </nav>
-
   <section id="ecommerce" class="active">
     <h2>Приклад: Інтернет-магазин</h2>
     <div class="example">
       <p>Повноцінний інтернет-магазин з кошиком, товарами та оплатою.</p>
       <p><a href="https://github.com/dayvay768/dayvay56" target="_blank">Дивитися на GitHub</a></p>
     </div>
-    <button class="buy-button" onclick="buyNow()">Замовити інтернет-магазин</button>
+    <a href="order.html"><button class="buy-button">Замовити інтернет-магазин</button></a>
   </section>
-
   <section id="simple">
     <h2>Приклад: Простий магазин</h2>
     <div class="example">
       <p>Сайт із вітриною товарів та контактами без онлайн-оплати.</p>
     </div>
-    <button class="buy-button" onclick="buyNow()">Замовити простий магазин</button>
+    <a href="order.html"><button class="buy-button">Замовити простий магазин</button></a>
   </section>
-
   <section id="fastfood">
     <h2>Приклад: Фастфуд-сайт</h2>
     <div class="example">
       <p>Меню їжі, кнопка швидкого замовлення, карта доставки.</p>
     </div>
-    <button class="buy-button" onclick="buyNow()">Замовити фастфуд-сайт</button>
+    <a href="order.html"><button class="buy-button">Замовити фастфуд-сайт</button></a>
   </section>
-
   <footer>
     Звʼязок: <a href="mailto:dayvay56@gmail.com" style="color: #9fcdff;">dayvay56@gmail.com</a><br/>
     &copy; 2025 Dayvay. Всі права захищені.
   </footer>
-
   <script>
     function showSection(id) {
       document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
-
-    function buyNow() {
-      window.location.href = "order.html";
-    }
   </script>
-
-  <!--
-    НОТАТКИ ДЛЯ РОЗРОБНИКА (бачить тільки власник на GitHub):
-    - Додати нові шаблони сайтів.
-    - Зробити окрему сторінку для покупок/оплати.
-    - Можна зробити підтримку користувачів через GitHub Issues.
-
-    КОРИСТУВАЧІ МОЖУТЬ ЗАЛИШАТИ ПОБАЖАННЯ В ISSUES: https://github.com/dayvay768/dayvay56/issues
-  -->
 </body>
 </html>

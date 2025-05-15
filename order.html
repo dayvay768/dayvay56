@@ -6,74 +6,42 @@
   <title>Замовлення сайту — Dayvay</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
       padding: 40px;
       text-align: center;
     }
-
-    h1 {
-      color: #333;
-    }
-
-    form {
-      background-color: white;
-      display: inline-block;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    input, select, textarea {
-      display: block;
+    h2 { color: #333; }
+    input, textarea {
       width: 300px;
-      margin: 10px auto;
       padding: 10px;
-      font-size: 16px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
-
     button {
-      padding: 10px 20px;
-      background-color: #28a745;
+      background-color: #007bff;
       color: white;
+      padding: 10px 20px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
     }
-
-    button:hover {
-      background-color: #218838;
-    }
-
-    a {
-      display: block;
-      margin-top: 20px;
-      color: #007bff;
-    }
+    button:hover { background-color: #0056b3; }
   </style>
 </head>
 <body>
-  <h1>Замовлення сайту</h1>
-  <form onsubmit="submitForm(event)">
-    <input type="text" placeholder="Ваше ім’я" required>
-    <input type="email" placeholder="Email для звʼязку" required>
-    <select required>
-      <option value="">Оберіть тип сайту</option>
-      <option value="ecommerce">Інтернет-магазин</option>
-      <option value="simple">Простий магазин</option>
-      <option value="fastfood">Фастфуд-сайт</option>
-    </select>
-    <textarea placeholder="Ваші побажання..." rows="5"></textarea>
-    <button type="submit">Надіслати</button>
+  <h2>Форма замовлення сайту</h2>
+  <form onsubmit="sendOrder(); return false;">
+    <input type="text" placeholder="Ваше ім'я" required><br>
+    <input type="email" placeholder="Ваш Email" required><br>
+    <textarea placeholder="Опишіть, який сайт вам потрібен" required></textarea><br>
+    <button type="submit">Відправити</button>
   </form>
-  <a href="index.html">Повернутись на головну</a>
-
+  <p id="msg" style="color: green;"></p>
   <script>
-    function submitForm(event) {
-      event.preventDefault();
-      alert("Дякуємо за замовлення! Ми з вами звʼяжемося якнайшвидше.");
-      window.location.href = "index.html";
+    function sendOrder() {
+      document.getElementById('msg').innerText = "Замовлення надіслано! Очікуйте відповідь на пошту.";
     }
   </script>
 </body>
