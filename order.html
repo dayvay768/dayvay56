@@ -1,47 +1,142 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Замовлення сайту — Dayvay</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 40px;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
     }
-    h2 { color: #333; }
-    input, textarea {
-      width: 300px;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background-color: #007bff;
+
+    header {
+      background-color: #343a40;
       color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+      text-align: center;
+      padding: 20px 10px;
     }
-    button:hover { background-color: #0056b3; }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .container img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, textarea, select {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #007bff;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 14px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .thank-you {
+      display: none;
+      font-size: 20px;
+      color: green;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #343a40;
+      color: white;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <h2>Форма замовлення сайту</h2>
-  <form onsubmit="sendOrder(); return false;">
-    <input type="text" placeholder="Ваше ім'я" required><br>
-    <input type="email" placeholder="Ваш Email" required><br>
-    <textarea placeholder="Опишіть, який сайт вам потрібен" required></textarea><br>
-    <button type="submit">Відправити</button>
-  </form>
-  <p id="msg" style="color: green;"></p>
+
+  <header>
+    <h1>Форма замовлення сайту</h1>
+  </header>
+
+  <div class="container">
+    <img src="https://source.unsplash.com/700x200/?website,design" alt="Website design illustration">
+    <form id="orderForm" onsubmit="handleSubmit(event)">
+      <label for="name">Ваше ім'я:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Ваш Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="type">Тип сайту:</label>
+      <select id="type" name="type">
+        <option value="ecommerce">Інтернет-магазин</option>
+        <option value="simple">Простий магазин</option>
+        <option value="fastfood">Фастфуд-сайт</option>
+      </select>
+
+      <label for="message">Коментар або побажання:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Наприклад: Хочу сайт з доставкою по Києву..."></textarea>
+
+      <button type="submit">Надіслати замовлення</button>
+    </form>
+    <div class="thank-you" id="thankYouMessage"></div>
+  </div>
+
+  <footer>
+    Звʼязок: <a href="mailto:dayvay56@gmail.com" style="color:#9fcdff">dayvay56@gmail.com</a><br/>
+    &copy; 2025 Dayvay
+  </footer>
+
   <script>
-    function sendOrder() {
-      document.getElementById('msg').innerText = "Замовлення надіслано! Очікуйте відповідь на пошту.";
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      document.getElementById('orderForm').style.display = 'none';
+      document.getElementById('thankYouMessage').style.display = 'block';
+      document.getElementById('thankYouMessage').innerText = `Дякуємо, ${name}! Очікуйте зворотнього зв'язку найближчим часом.`;
     }
   </script>
 </body>
